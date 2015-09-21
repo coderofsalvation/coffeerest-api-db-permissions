@@ -86,7 +86,7 @@ So in order for the user to get access to the article-collection above, tag the 
     # add tags (global)
     curl -H X-FOO-TOKEN: foobar -X POST http://localhost:4455/v1/user/tag --data {"name":"is user"}
     curl -H X-FOO-TOKEN: foobar -X POST http://localhost:4455/v1/user/tag --data {"name":"is admin user"}
-    curl -H X-FOO-TOKEN: foobar -X POST http://localhost:4455/v1/user/tag --data {"name":"can update user","subtags":["can create,read,update user email"]}
+    curl -H X-FOO-TOKEN: foobar -X POST http://localhost:4455/v1/user/tag --data {"name":"is editor","subtags":["can create,read,update,delete article","cannot create,read,update user email"]}
 
     # add tag 'is user' (id 1) and 'cannot update article content' (id 2) to userid 1
     curl -H X-FOO-TOKEN: foobar -X GET http://localhost:4455/v1/user/tag/1/1/enable
